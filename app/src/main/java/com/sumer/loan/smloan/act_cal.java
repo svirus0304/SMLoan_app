@@ -20,7 +20,7 @@ public class act_cal extends Activity {
         TextView cal_cnt_txtv=(TextView)findViewById(R.id.cal_cnt_txtv);
         TextView cal_mem_txtv=(TextView)findViewById(R.id.cal_mem_txtv);
 
-        Intent intent=new Intent();
+        Intent intent=getIntent();
         String main_cnt=intent.getStringExtra("main_cnt");
         String main_mem=intent.getStringExtra("main_mem");
 

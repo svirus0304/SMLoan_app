@@ -21,7 +21,7 @@ public class act_cal extends Activity {
         TextView cal_mem_txtv=(TextView)findViewById(R.id.cal_mem_txtv);
 
         Intent intent=getIntent();
-        String main_cnt=intent.getStringExtra("main_cnt");
+        String main_cnt=intent.getIntExtra("main_cnt", -1)+"";
         String main_mem=intent.getStringExtra("main_mem");
 
         cal_cnt_txtv.setText(main_cnt);

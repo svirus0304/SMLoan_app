@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/main_cnt_numpicker"
-        android:layout_weight="0.14" />
+        android:layout_weight="0.14"/>
 
     <TextView
         android:text="참석자(띄어쓰기로 구분)"

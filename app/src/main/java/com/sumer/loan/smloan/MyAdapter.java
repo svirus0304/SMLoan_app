@@ -42,8 +42,6 @@ public class MyAdapter extends BaseAdapter {
         if (convertView==null) {
             LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.lay_cal,parent,false);
-
-            return convertView;
         }
         /*
         ImageView iv = (ImageView)convertView.findViewById(R.id.imageView1);

@@ -1,19 +1,17 @@
-package bean;
-
-import java.util.logging.Logger;
+package com.sumer.loan.smloan;
 
 /**
  * Created by kjb on 2016-11-24.
  */
 
-public class bean_person {
+public class Bean_person {
     private String name;
     private boolean attendYN;
     private boolean deductYN;
     private int deduct_amt;
     private int pay_amt;
 
-    public bean_person(String name){
+    public Bean_person(String name){
         name=this.name;
         attendYN=true;
         deductYN=false;

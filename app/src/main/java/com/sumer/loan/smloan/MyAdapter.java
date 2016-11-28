@@ -1,4 +1,4 @@
-package method;
+package com.sumer.loan.smloan;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,22 +8,15 @@ import android.widget.BaseAdapter;
 
 import java.util.ArrayList;
 
-import bean.bean_stage;
-
 /**
  * Created by kjb on 2016-11-24.
  */
 
 public class MyAdapter extends BaseAdapter {
-    Context context;
-    int layout;
-    ArrayList<bean_stage> al;
-    LayoutInflater inf;
-    public MyAdapter(Context context, int layout, ArrayList<bean_stage> al){
-        context=this.context;
-        layout=this.layout;
-        al=this.al;
-        inf=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    ArrayList<Bean_stage> al;
+
+    public MyAdapter(ArrayList<Bean_stage> al){
+        this.al=al;
     }
 
     @Override
@@ -43,8 +36,14 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        final int pos = position;
+        final Context context=parent.getContext();
+
         if (convertView==null) {
-            convertView = inf.inflate(layout, null);
+            LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.lay_cal,parent,false);
+
+            return convertView;
         }
         /*
         ImageView iv = (ImageView)convertView.findViewById(R.id.imageView1);
@@ -56,6 +55,7 @@ public class MyAdapter extends BaseAdapter {
         tvName.setText(m.title);
         tvInfo.setText(m.artist);
         */
-        return null;
+
+        return convertView;
     }
 }

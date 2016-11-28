@@ -1,4 +1,4 @@
-package bean;
+package com.sumer.loan.smloan;
 
 import java.util.ArrayList;
 
@@ -6,13 +6,13 @@ import java.util.ArrayList;
  * Created by kjb on 2016-11-24.
  */
 
-public class bean_stage {
+public class Bean_stage {
     String place;
     String payer;
     int bill;
-    ArrayList<bean_person> personList;
+    ArrayList<Bean_person> personList;
 
-    public bean_stage(String place,String payer,int bill,ArrayList<bean_person> personList){
+    public Bean_stage(String place, String payer, int bill, ArrayList<Bean_person> personList){
         this.place=place;
         this.payer=payer;
         this.bill=bill;
@@ -43,11 +43,11 @@ public class bean_stage {
         this.bill = bill;
     }
 
-    public ArrayList<bean_person> getPersonList() {
+    public ArrayList<Bean_person> getPersonList() {
         return personList;
     }
 
-    public void setPersonList(ArrayList<bean_person> personList) {
+    public void setPersonList(ArrayList<Bean_person> personList) {
         this.personList = personList;
     }
 }

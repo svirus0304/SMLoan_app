@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sumer.loan.smloan.act_main"
+    tools:context="com.sumer.loan.smloan.Act_main"
     android:orientation="vertical"
     android:weightSum="1">
 

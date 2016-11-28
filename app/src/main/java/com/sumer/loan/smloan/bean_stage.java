@@ -10,6 +10,7 @@ public class Bean_stage {
     String place;
     String payer;
     int bill;
+    boolean treatYN;
     ArrayList<Bean_person> personList;
 
     public Bean_stage(String place, String payer, int bill, ArrayList<Bean_person> personList){
@@ -43,6 +44,23 @@ public class Bean_stage {
         this.bill = bill;
     }
 
+    public boolean isTreatYN() {
+        return treatYN;
+    }
+
+    public void setTreatYN(boolean treatYN) {
+        this.treatYN = treatYN;
+        if(treatYN){//쏨 일때
+            for(int i=0;i<personList.size();i++){
+                if(personList.get(i).getName().equals(getPayer())){//결제자가 bill원
+                    personList.get(i).setPay_amt(getBill());
+                }else{
+                    personList.get(i).setPay_amt(0);//나머지 0원
+                }
+            }
+        }
+    }
+
     public ArrayList<Bean_person> getPersonList() {
         return personList;
     }
@@ -50,4 +68,6 @@ public class Bean_stage {
     public void setPersonList(ArrayList<Bean_person> personList) {
         this.personList = personList;
     }
+
+
 }

@@ -33,7 +33,7 @@ public class Bean_person {
 
     public void setAttendYN(boolean attendYN) {
         this.attendYN = attendYN;
-        if(!attendYN){
+        if(!this.attendYN){
             setPay_amt(0);
         }
     }
@@ -44,7 +44,7 @@ public class Bean_person {
 
     public void setDeductYN(boolean deductYN) {
         this.deductYN = deductYN;
-        if(!deductYN){
+        if(!this.deductYN){
             setDeduct_amt(0);
         }
     }
@@ -56,7 +56,7 @@ public class Bean_person {
     public void setDeduct_amt(int deduct_amt) {
         this.deduct_amt = deduct_amt;
         if(this.deduct_amt!=0 && !deductYN){
-            this.deduct_amt=0;
+            setDeduct_amt(0);
         }
     }
 
@@ -67,7 +67,7 @@ public class Bean_person {
     public void setPay_amt(int pay_amt) {
         this.pay_amt = pay_amt;
         if(this.pay_amt!=0 && !attendYN){
-            pay_amt=0;
+            setPay_amt(0);
         }
     }
 }

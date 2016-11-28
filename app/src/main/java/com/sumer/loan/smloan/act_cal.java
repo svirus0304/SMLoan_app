@@ -42,7 +42,6 @@ public class Act_cal extends Activity {
             stageList.add(bean_stage);
         }
 
-
         ListView listView=(ListView)findViewById(R.id.cal_listv);
         listView.setAdapter(new MyAdapter(stageList));
 

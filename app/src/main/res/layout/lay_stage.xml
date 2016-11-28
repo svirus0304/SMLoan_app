@@ -12,16 +12,20 @@
             android:text="00차"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:id="@+id/stage_idx" />
+            android:id="@+id/stage_idx"
+            android:textAlignment="center" />
 
         <EditText
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:text="술집이름"
+            android:text="장소"
             android:ems="10"
             android:id="@+id/stage_name"
             android:hint="(장소)"
-            android:layout_width="150dp" />
+            android:layout_width="150dp"
+            android:textAlignment="center"
+            android:textColor="?attr/colorButtonNormal"
+            android:selectAllOnFocus="true" />
 
         <Spinner
             android:layout_height="match_parent"
@@ -30,11 +34,13 @@
             android:spinnerMode="dialog" />
 
         <Switch
-            android:text="Switch"
+            android:text="안쏨"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/stage_"
-            android:layout_weight="1" />
+            android:id="@+id/stage_treatYN"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="12sp" />
 
     </LinearLayout>
 

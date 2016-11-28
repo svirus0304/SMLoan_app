@@ -5,6 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -36,12 +40,12 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final int pos = position;
         final Context context=parent.getContext();
 
         if (convertView==null) {
             LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.lay_cal,parent,false);
+            //convertView = inflater.inflate(R.layout.lay_cal,parent,false);
+            convertView = inflater.inflate(R.layout.lay_stage,parent,false);
         }
         /*
         ImageView iv = (ImageView)convertView.findViewById(R.id.imageView1);
@@ -53,6 +57,24 @@ public class MyAdapter extends BaseAdapter {
         tvName.setText(m.title);
         tvInfo.setText(m.artist);
         */
+        TextView stage_idx=(TextView)convertView.findViewById(R.id.stage_idx);
+        EditText stage_name=(EditText)convertView.findViewById(R.id.stage_name);
+        Spinner stage_payer=(Spinner)convertView.findViewById(R.id.stage_payer);
+        final Switch stage_treatYN=(Switch)convertView.findViewById(R.id.stage_treatYN);
+
+        stage_idx.setText((position+1)+"차");
+        stage_treatYN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(stage_treatYN.isChecked()){
+                    stage_treatYN.setText("쏨");
+                    stage_treatYN.setTextSize(15);
+                }else{
+                    stage_treatYN.setText("안쏨");
+                    stage_treatYN.setTextSize(10);
+                }
+            }
+        });
 
         return convertView;
     }

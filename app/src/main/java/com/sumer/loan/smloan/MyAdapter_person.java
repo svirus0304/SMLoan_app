@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.zip.Inflater;
 
@@ -51,6 +53,7 @@ public class MyAdapter_person extends BaseAdapter {
         CheckBox person_attendYN=(CheckBox)convertView.findViewById(R.id.person_attendYN);
         Spinner person_deductYN=(Spinner)convertView.findViewById(R.id.person_deductYN);
         EditText person_deductAmt=(EditText)convertView.findViewById(R.id.person_deductAmt);
+        TextView person_payAmt=(TextView)convertView.findViewById(R.id.person_payAmt);
 
         return convertView;
     }

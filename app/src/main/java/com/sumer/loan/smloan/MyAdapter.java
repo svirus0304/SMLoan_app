@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -17,20 +18,20 @@ import java.util.ArrayList;
  */
 
 public class MyAdapter extends BaseAdapter {
-    ArrayList<Bean_stage> al;
+    ArrayList<Bean_stage> stageList;
 
-    public MyAdapter(ArrayList<Bean_stage> al){
-        this.al=al;
+    public MyAdapter(ArrayList<Bean_stage> stageList){
+        this.stageList = stageList;
     }
 
     @Override
     public int getCount() {
-        return al.size();
+        return stageList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return al.get(position);
+        return stageList.get(position);
     }
 
     @Override
@@ -47,22 +48,30 @@ public class MyAdapter extends BaseAdapter {
             //convertView = inflater.inflate(R.layout.lay_cal,parent,false);
             convertView = inflater.inflate(R.layout.lay_stage,parent,false);
         }
-        /*
-        ImageView iv = (ImageView)convertView.findViewById(R.id.imageView1);
-        TextView tvName = (TextView)convertView.findViewById(R.id.textView1);
-        TextView tvInfo = (TextView)convertView.findViewById(R.id.textView2);
 
-        Song m = al.get(position);
-        iv.setImageResource(m.img);
-        tvName.setText(m.title);
-        tvInfo.setText(m.artist);
-        */
         TextView stage_idx=(TextView)convertView.findViewById(R.id.stage_idx);
         EditText stage_name=(EditText)convertView.findViewById(R.id.stage_name);
         Spinner stage_payer=(Spinner)convertView.findViewById(R.id.stage_payer);
         final Switch stage_treatYN=(Switch)convertView.findViewById(R.id.stage_treatYN);
 
         stage_idx.setText((position+1)+"차");
+        //switch
+        /*
+        ArrayList<String> entries =  new ArrayList<String>(Arrays.asList("List Item A", "List Item B"));
+        ArrayAdapter<String> arrAdapt = new ArrayAdapter<String>(this, R.layout.list_item, entries);
+
+        arrAdapt.add("List Item C");
+        arrAdapt.notifyDataSetChanged();
+         */
+        ArrayList<String> drinkers=new ArrayList<String>();
+        for(int i = 0; i< stageList.get(position).getPersonList().size(); i++){
+            drinkers.add("(결제자)");
+            drinkers.add(stageList.get(position).getPersonList().get(i).getName());
+        }
+
+        ArrayAdapter<String> arrAdapt=new ArrayAdapter<String>(convertView.getContext(),android.R.layout.simple_spinner_dropdown_item,drinkers);
+        stage_payer.setAdapter(arrAdapt);
+
         stage_treatYN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

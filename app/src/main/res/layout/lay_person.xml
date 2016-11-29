@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="이름"
+            android:layout_height="wrap_content"
+            android:id="@+id/person_name"
+            android:layout_width="55dp" />
+
+        <CheckBox
+            android:text="참석"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/person_attendYN" />
+
+        <Spinner
+            android:layout_height="40dp"
+            android:id="@+id/person_deductYN"
+            android:layout_width="150dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/person_deductAmt"
+            android:layout_weight="1"
+            android:text="공제금액" />
+
+    </LinearLayout>
+
+    <TextView
+        android:text="개인금액"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/person_payAmt" />
+</LinearLayout>

@@ -11,8 +11,10 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by kjb on 2016-11-24.
@@ -42,11 +44,11 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final Context context=parent.getContext();
+        final int finalPosition = position;
+        final View finalConvertView = convertView;
 
         if (convertView==null) {
-            LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            //convertView = inflater.inflate(R.layout.lay_cal,parent,false);
+            LayoutInflater inflater=(LayoutInflater)parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.lay_stage,parent,false);
         }
 
@@ -64,11 +66,17 @@ public class MyAdapter extends BaseAdapter {
         arrAdapt.add("List Item C");
         arrAdapt.notifyDataSetChanged();
          */
-        ArrayList<String> drinkers=new ArrayList<String>();
+        ArrayList<String> drinkers=new ArrayList<String>(Arrays.asList("(결제자)"));
         for(int i = 0; i< stageList.get(position).getPersonList().size(); i++){
-            drinkers.add("(결제자)");
             drinkers.add(stageList.get(position).getPersonList().get(i).getName());
         }
+
+        /*for(int i=0;i<drinkers.size();i++){
+            Toast.makeText(convertView.getContext(), i+" : "+drinkers.get(i),Toast.LENGTH_SHORT).show();
+            if(i==10){
+                break;
+            }
+        }*/
 
         ArrayAdapter<String> arrAdapt=new ArrayAdapter<String>(convertView.getContext(),android.R.layout.simple_spinner_dropdown_item,drinkers);
         stage_payer.setAdapter(arrAdapt);
@@ -86,8 +94,15 @@ public class MyAdapter extends BaseAdapter {
             }
         });
 
+        for(int i=0;i<stageList.size();i++){
+            for(int j=0;j<stageList.get(i).getPersonList().size();j++){
+                Toast.makeText(convertView.getContext(),i+"-"+j+" stageList.size : "+stageList.size()+" / personList.name : "+stageList.get(i).getPersonList().get(j).getName(),Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        MyAdapter_person adapter=new MyAdapter_person(stageList.get(position).getPersonList());
         ListView listView=(ListView)convertView.findViewById(R.id.stage_listv);
-        listView.setAdapter(new MyAdapter_person(stageList.get(position).getPersonList()));
+        listView.setAdapter(adapter);
 
         return convertView;
     }

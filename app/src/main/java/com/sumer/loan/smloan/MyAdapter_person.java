@@ -29,6 +29,7 @@ public class MyAdapter_person extends BaseAdapter {
 
     public MyAdapter_person(ArrayList<Bean_person> personList){
         this.personList=personList;
+
     }
 
     @Override
@@ -56,6 +57,10 @@ public class MyAdapter_person extends BaseAdapter {
             convertView=inflater.inflate(R.layout.lay_person,parent,false);
         }
 
+        /*for(int i=0;i<personList.size();i++){
+            Toast.makeText(convertView.getContext(),personList.get(i).getName(),Toast.LENGTH_SHORT).show();
+        }*/
+
         TextView person_name=(TextView)convertView.findViewById(R.id.person_name);
         final CheckBox person_attendYN=(CheckBox)convertView.findViewById(R.id.person_attendYN);
         Spinner person_deductYN=(Spinner)convertView.findViewById(R.id.person_deductYN);
@@ -69,7 +74,7 @@ public class MyAdapter_person extends BaseAdapter {
             public void onClick(View v) {
                 if(person_attendYN.isChecked()){//참석시
                     personList.get(finalPosition).setAttendYN(true);
-                    Toast.makeText(finalConvertView.getContext(),"personList.attendYN : "+personList.get(finalPosition).isAttendYN(),Toast.LENGTH_SHORT);
+                    Toast.makeText(finalConvertView.getContext(),"personList.attendYN : "+personList.get(finalPosition).isAttendYN(),Toast.LENGTH_SHORT).show();
                 }else{
                     personList.get(finalPosition).setAttendYN(false);
                 }
@@ -91,7 +96,7 @@ public class MyAdapter_person extends BaseAdapter {
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                personList.get(finalPosition).setDeductYN(false);
+                //personList.get(finalPosition).setDeductYN(false);
             }
         });
 

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
+import android.widget.Toast;
 
 public class Act_main extends AppCompatActivity {
     NumberPicker main_cnt_numpicker;
@@ -29,6 +30,7 @@ public class Act_main extends AppCompatActivity {
 
                 EditText main_mem_txt=(EditText)findViewById(R.id.main_mem_txt);
                 String main_mem=main_mem_txt.getText().toString();
+
                 String[] list_mem=main_mem.split(" ");
 
                 Intent intent=new Intent(Act_main.this,Act_cal.class);

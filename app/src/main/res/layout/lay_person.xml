@@ -2,7 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal" android:layout_width="match_parent"
@@ -12,7 +12,8 @@
             android:text="이름"
             android:layout_height="wrap_content"
             android:id="@+id/person_name"
-            android:layout_width="55dp" />
+            android:layout_width="55dp"
+            android:textAlignment="center"/>
 
         <CheckBox
             android:text="참석"
@@ -23,7 +24,8 @@
         <Spinner
             android:layout_height="40dp"
             android:id="@+id/person_deductYN"
-            android:layout_width="150dp" />
+            android:layout_width="150dp"
+            android:textAlignment="center"/>
 
         <EditText
             android:layout_width="wrap_content"
@@ -32,7 +34,8 @@
             android:ems="10"
             android:id="@+id/person_deductAmt"
             android:layout_weight="1"
-            android:text="공제금액" />
+            android:text="공제금액"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 
@@ -40,5 +43,6 @@
         android:text="개인금액"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/person_payAmt" />
+        android:id="@+id/person_payAmt"
+        android:textAlignment="center" />
 </LinearLayout>

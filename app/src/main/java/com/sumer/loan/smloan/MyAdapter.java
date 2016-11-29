@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -84,6 +85,9 @@ public class MyAdapter extends BaseAdapter {
                 }
             }
         });
+
+        ListView listView=(ListView)convertView.findViewById(R.id.stage_listv);
+        listView.setAdapter(new MyAdapter_person(stageList.get(position).getPersonList()));
 
         return convertView;
     }

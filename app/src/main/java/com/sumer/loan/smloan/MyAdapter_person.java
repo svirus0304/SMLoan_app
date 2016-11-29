@@ -5,6 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.zip.Inflater;
@@ -22,17 +26,17 @@ public class MyAdapter_person extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return personList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return personList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
@@ -42,6 +46,12 @@ public class MyAdapter_person extends BaseAdapter {
             LayoutInflater inflater=(LayoutInflater)parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView=inflater.inflate(R.layout.lay_person,parent,false);
         }
+
+        TextView person_name=(TextView)convertView.findViewById(R.id.person_name);
+        CheckBox person_attendYN=(CheckBox)convertView.findViewById(R.id.person_attendYN);
+        Spinner person_deductYN=(Spinner)convertView.findViewById(R.id.person_deductYN);
+        EditText person_deductAmt=(EditText)convertView.findViewById(R.id.person_deductAmt);
+
         return convertView;
     }
 }

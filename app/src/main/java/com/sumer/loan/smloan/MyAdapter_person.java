@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -13,7 +15,9 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.zip.Inflater;
 
 /**
@@ -73,7 +77,23 @@ public class MyAdapter_person extends BaseAdapter {
         });
 
         //공제 스피너, 이벤트
-
+        ArrayList<String> deductList=new ArrayList<String>(Arrays.asList("공제없음","택시비공제","백수공제"));
+        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(convertView.getContext(),android.R.layout.simple_spinner_dropdown_item,deductList);
+        person_deductYN.setAdapter(arrayAdapter);
+        person_deductYN.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position==0){
+                    personList.get(finalPosition).setDeductYN(false);
+                }else{
+                    personList.get(finalPosition).setDeductYN(true);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                personList.get(finalPosition).setDeductYN(false);
+            }
+        });
 
         return convertView;
     }

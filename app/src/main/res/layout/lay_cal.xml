@@ -21,7 +21,6 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.00"
         android:id="@+id/cal_listv" />
 
 </LinearLayout>

@@ -105,6 +105,7 @@ public class MyAdapter extends BaseAdapter {
         ListView listView=(ListView)convertView.findViewById(R.id.stage_listv);
         listView.setAdapter(adapter);
 
+
         return convertView;
     }
 

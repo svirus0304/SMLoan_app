@@ -12,7 +12,7 @@ public class Bean_person {
     private int pay_amt;
 
     public Bean_person(String name){
-        name=this.name;
+        this.name=name;
         attendYN=true;
         deductYN=false;
         deduct_amt=0;

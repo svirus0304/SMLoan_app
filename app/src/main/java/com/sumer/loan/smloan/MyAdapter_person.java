@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -68,13 +69,16 @@ public class MyAdapter_person extends BaseAdapter {
         EditText person_deductAmt=(EditText)convertView.findViewById(R.id.person_deductAmt);
         TextView person_payAmt=(TextView)convertView.findViewById(R.id.person_payAmt);
 
+
+
         person_name.setText(personList.get(position).getName());
         //참석 이벤트
-        person_attendYN.setOnClickListener(new View.OnClickListener() {
+        person_attendYN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if(person_attendYN.isChecked()){//참석시
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
                     personList.get(finalPosition).setAttendYN(true);
+
                     //Toast.makeText(finalConvertView.getContext(),"personList.attendYN : "+personList.get(finalPosition).isAttendYN(),Toast.LENGTH_SHORT).show();
                     Log.i("personList.get(finalPosition).isAttendYN();", personList.get(finalPosition).isAttendYN()+"");
                 }else{

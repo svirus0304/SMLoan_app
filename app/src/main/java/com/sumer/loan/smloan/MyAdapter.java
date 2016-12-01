@@ -94,12 +94,13 @@ public class MyAdapter extends BaseAdapter {
             }
         });
 
+        /*
         for(int i=0;i<stageList.size();i++){
             for(int j=0;j<stageList.get(i).getPersonList().size();j++){
                 Toast.makeText(convertView.getContext(),i+"-"+j+" stageList.size : "+stageList.size()+" / personList.name : "+stageList.get(i).getPersonList().get(j).getName(),Toast.LENGTH_SHORT).show();
             }
-
         }
+        */
 
         MyAdapter_person adapter=new MyAdapter_person(stageList.get(position).getPersonList());
         ListView listView=(ListView)convertView.findViewById(R.id.stage_listv);

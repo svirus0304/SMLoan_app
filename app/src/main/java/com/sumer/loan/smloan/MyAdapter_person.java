@@ -74,7 +74,7 @@ public class MyAdapter_person extends BaseAdapter {
             public void onClick(View v) {
                 if(person_attendYN.isChecked()){//참석시
                     personList.get(finalPosition).setAttendYN(true);
-                    Toast.makeText(finalConvertView.getContext(),"personList.attendYN : "+personList.get(finalPosition).isAttendYN(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(finalConvertView.getContext(),"personList.attendYN : "+personList.get(finalPosition).isAttendYN(),Toast.LENGTH_SHORT).show();
                 }else{
                     personList.get(finalPosition).setAttendYN(false);
                 }

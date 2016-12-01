@@ -1,6 +1,7 @@
 package com.sumer.loan.smloan;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +63,7 @@ public class MyAdapter_person extends BaseAdapter {
         }*/
 
         TextView person_name=(TextView)convertView.findViewById(R.id.person_name);
-        final CheckBox person_attendYN=(CheckBox)convertView.findViewById(R.id.person_attendYN);
+        CheckBox person_attendYN=(CheckBox)convertView.findViewById(R.id.person_attendYN);
         Spinner person_deductYN=(Spinner)convertView.findViewById(R.id.person_deductYN);
         EditText person_deductAmt=(EditText)convertView.findViewById(R.id.person_deductAmt);
         TextView person_payAmt=(TextView)convertView.findViewById(R.id.person_payAmt);
@@ -75,8 +76,10 @@ public class MyAdapter_person extends BaseAdapter {
                 if(person_attendYN.isChecked()){//참석시
                     personList.get(finalPosition).setAttendYN(true);
                     //Toast.makeText(finalConvertView.getContext(),"personList.attendYN : "+personList.get(finalPosition).isAttendYN(),Toast.LENGTH_SHORT).show();
+                    Log.i("personList.get(finalPosition).isAttendYN();", personList.get(finalPosition).isAttendYN()+"");
                 }else{
                     personList.get(finalPosition).setAttendYN(false);
+                    Log.i("personList.get(finalPosition).isAttendYN();", personList.get(finalPosition).isAttendYN()+"");
                 }
             }
         });
@@ -90,8 +93,10 @@ public class MyAdapter_person extends BaseAdapter {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0){
                     personList.get(finalPosition).setDeductYN(false);
+                    Log.i("personList.get(finalPosition).isDeductYN();", personList.get(finalPosition).isDeductYN()+"");
                 }else{
                     personList.get(finalPosition).setDeductYN(true);
+                    Log.i("personList.get(finalPosition).isDeductYN();", personList.get(finalPosition).isDeductYN()+"");
                 }
             }
             @Override

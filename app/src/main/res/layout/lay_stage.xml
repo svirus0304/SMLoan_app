@@ -6,14 +6,16 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/common_google_signin_btn_text_dark_disabled">
 
         <TextView
             android:text="00차"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:id="@+id/stage_idx"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="30sp" />
 
         <EditText
             android:layout_height="wrap_content"

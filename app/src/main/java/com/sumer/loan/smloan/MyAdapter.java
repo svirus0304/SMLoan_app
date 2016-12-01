@@ -1,6 +1,7 @@
 package com.sumer.loan.smloan;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,6 +106,8 @@ public class MyAdapter extends BaseAdapter {
         MyAdapter_person adapter=new MyAdapter_person(stageList.get(position).getPersonList());
         ListView listView=(ListView)convertView.findViewById(R.id.stage_listv);
         listView.setAdapter(adapter);
+        Log.i("listView.getHeight ( stage_listv )",listView.getHeight()+"");
+        Log.i("listView.getDividerHeight() ( stage_listv )",listView.getDividerHeight()+"");
 
 
         return convertView;

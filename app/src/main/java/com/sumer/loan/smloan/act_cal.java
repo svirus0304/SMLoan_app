@@ -3,6 +3,7 @@ package com.sumer.loan.smloan;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +50,10 @@ public class Act_cal extends Activity {
 
         ListView listView=(ListView)findViewById(R.id.cal_listv);
         listView.setAdapter(new MyAdapter(stageList));
+        Log.i("listView.getHeight ( cal_listv ) ",listView.getHeight()+"");
+        Log.i("listView.getDividerHeight() ( cal_listv ) ",listView.getDividerHeight()+"");
+
+
 
     }
 }

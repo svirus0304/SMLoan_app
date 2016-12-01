@@ -46,8 +46,8 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:id="@+id/stage_listv" />
+        android:id="@+id/stage_listv"
+        android:layout_height="300dp" />
 
 
 </LinearLayout>

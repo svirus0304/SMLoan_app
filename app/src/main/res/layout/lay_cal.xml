@@ -17,10 +17,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/cal_mem_txtv"
         android:layout_weight="0.00" />
-
+<!--
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="122dp"
         android:id="@+id/cal_listv" />
+-->
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.00"
+        android:id="@+id/cal_exListv" />
 
 </LinearLayout>

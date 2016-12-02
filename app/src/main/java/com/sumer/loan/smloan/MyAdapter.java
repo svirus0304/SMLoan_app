@@ -23,11 +23,11 @@ import java.util.Arrays;
 
 public class MyAdapter extends BaseAdapter {
     ArrayList<Bean_stage> stageList;
-    ListView listView_person;
+    ArrayList<ListView> listViewList_person;
 
-    public MyAdapter(ArrayList<Bean_stage> stageList, ListView listView_person){
+    public MyAdapter(ArrayList<Bean_stage> stageList, ArrayList<ListView> listViewList_person){
         this.stageList = stageList;
-        this.listView_person=listView_person;
+        this.listViewList_person=listViewList_person;
     }
 
     @Override
@@ -107,7 +107,7 @@ public class MyAdapter extends BaseAdapter {
 
         MyAdapter_person adapter=new MyAdapter_person(stageList.get(position).getPersonList());
         ListView listView=(ListView)convertView.findViewById(R.id.stage_listv);
-        listView=listView_person;
+        listView=listViewList_person.get(position);
 
         Log.i("listView.getHeight ( stage_listv )",listView.getHeight()+"");
         Log.i("listView.getDividerHeight() ( stage_listv )",listView.getDividerHeight()+"");

@@ -33,8 +33,9 @@ public class Act_cal extends Activity {
         cal_mem_txtv.setText("맴버 수 : "+list_mem.length);
 
         ArrayList<Bean_stage> stageList=new ArrayList<>();
+        ArrayList<Bean_person> personList = null;
         for(int i=0;i<main_cnt;i++){
-            ArrayList<Bean_person> personList=new ArrayList<>();
+            personList=new ArrayList<>();
             for(int j=0;j<list_mem.length;j++){
                 Bean_person bean_person=new Bean_person(list_mem[j]);
                 personList.add(bean_person);
@@ -48,8 +49,16 @@ public class Act_cal extends Activity {
             Toast.makeText(Act_cal.this,i+" stageList.size : "+stageList.size()+" / personList.name : "+stageList.get(0).getPersonList().get(i).getName(),Toast.LENGTH_SHORT).show();
         }*/
 
+        ArrayList<ListView> listViewList=new ArrayList<>();
+        for(int i=0;i<stageList.size();i++){
+            ListView listView_person=(ListView)findViewById(R.id.stage_listv);
+            listView_person.setAdapter(new MyAdapter_person(personList));
+            listViewList.add(listView_person);
+        }
+
+
         ListView listView=(ListView)findViewById(R.id.cal_listv);
-        listView.setAdapter(new MyAdapter(stageList));
+        listView.setAdapter(new MyAdapter(stageList,listViewList));
         Log.i("listView.getHeight ( cal_listv ) ",listView.getHeight()+"");
         Log.i("listView.getDividerHeight() ( cal_listv ) ",listView.getDividerHeight()+"");
 

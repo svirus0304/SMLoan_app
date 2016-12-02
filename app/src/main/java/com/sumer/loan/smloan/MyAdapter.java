@@ -104,7 +104,7 @@ public class MyAdapter extends BaseAdapter {
             }
         }
         */
-
+/*
         MyAdapter_person adapter=new MyAdapter_person(stageList.get(position).getPersonList());
         ListView listView=(ListView)convertView.findViewById(R.id.stage_listv);
         listView=listViewList_person.get(position);
@@ -112,7 +112,7 @@ public class MyAdapter extends BaseAdapter {
         Log.i("listView.getHeight ( stage_listv )",listView.getHeight()+"");
         Log.i("listView.getDividerHeight() ( stage_listv )",listView.getDividerHeight()+"");
 
-
+*/
         return convertView;
     }
 

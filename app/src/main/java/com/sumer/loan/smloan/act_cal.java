@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,18 +50,15 @@ public class Act_cal extends Activity {
             Toast.makeText(Act_cal.this,i+" stageList.size : "+stageList.size()+" / personList.name : "+stageList.get(0).getPersonList().get(i).getName(),Toast.LENGTH_SHORT).show();
         }*/
 
-        ArrayList<ListView> listViewList=new ArrayList<>();
-        for(int i=0;i<stageList.size();i++){
-            ListView listView_person=(ListView)findViewById(R.id.stage_listv);
-            listView_person.setAdapter(new MyAdapter_person(personList));
-            listViewList.add(listView_person);
-        }
-
-
+        /*
         ListView listView=(ListView)findViewById(R.id.cal_listv);
         listView.setAdapter(new MyAdapter(stageList,listViewList));
         Log.i("listView.getHeight ( cal_listv ) ",listView.getHeight()+"");
         Log.i("listView.getDividerHeight() ( cal_listv ) ",listView.getDividerHeight()+"");
+        */
+
+        ExpandableListView listView=(ExpandableListView)findViewById(R.id.cal_exListv);
+        listView.setAdapter(new ExAdapter(stageList));
 
 
 
